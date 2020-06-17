@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = ({ type, palceholder, label }) => (
-  <InputContainer>
+const Input = ({ type, palceholder, label, inputWidth }) => (
+  <InputContainer inputWidth={inputWidth}>
     <InputLabel>{label}</InputLabel>
     <InputElement type={type} palceholder={palceholder} />
   </InputContainer>
@@ -16,19 +16,20 @@ const InputLabel = styled.label`
   }
 `;
 const InputElement = styled.input`
+  width: 60%;
   border: 2px solid #efefef;
   border-radius: 20px;
   box-sizing: border-box;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   @media (min-width: 1024px) {
     font-size: 1rem;
   }
 `;
 const InputContainer = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
-  padding: 0.2rem 0rem;
+  margin-bottom: 0.5rem;
+  width: ${(props) => props.inputWidth};
 `;
 
 export default Input;
