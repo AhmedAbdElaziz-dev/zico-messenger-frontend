@@ -9,7 +9,7 @@ const FooterContainer = styled.div`
   box-sizing: border-box;
   background-image: url("image7.webp");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-color: #0c121c;
   background-repeat: no-repeat;
 `;
