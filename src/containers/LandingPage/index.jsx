@@ -1,28 +1,44 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import Header from "../../components/Header";
 import Form from "../../components/Form";
-import Footer from "../../components/Footer";
 
 class LandingPage extends Component {
+  state = {
+    buttonList: [
+      {
+        text: "login",
+      },
+      { text: "register" },
+    ],
+    inputList: [
+      {
+        type: "text",
+        label: "userName",
+        value: "",
+      },
+      {
+        type: "password",
+        label: "password",
+        value: "",
+      },
+      {
+        type: "date",
+        label: "birthday",
+        value: "",
+      },
+    ],
+  };
+
   render() {
     return (
-      <Contianer>
-        <Header />
-        <Form />
-        <Footer />
-      </Contianer>
+      <Form
+        formWidth={"20rem"}
+        inputWidth={""}
+        formHeader={"LOGIN"}
+        inputList={this.state.inputList}
+        buttonList={this.state.buttonList}
+      />
     );
   }
 }
-
-const Contianer = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export default LandingPage;
