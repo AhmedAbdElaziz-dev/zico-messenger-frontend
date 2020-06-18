@@ -15,6 +15,7 @@ const HeaderContainer = styled.div`
   justify-content:center;
   align-items-center;
   padding:0.5rem;
+  box-sizing:border-box;
 `;
 
 export default Header;
