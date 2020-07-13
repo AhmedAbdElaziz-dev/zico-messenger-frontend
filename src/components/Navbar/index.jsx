@@ -1,23 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import Tab from "../Tab";
-import Icon from "../Icon";
 
-const Navbar = () => (
-  <NavbarList>
-    <Icon src={"image6.png"}/>
-    <Tab name={"HOME"} />
-    <Tab name={"ABOUT US"} />
-    <Tab name={"FEATURES"} />
-  </NavbarList>
+const NavBar = () => (
+  <React.Fragment>
+    <NavBarContainer>
+      <Item>Log Out</Item>
+      <Item>Profile</Item>
+    </NavBarContainer>
+  </React.Fragment>
 );
 
-const NavbarList = styled.ul`
+const NavBarContainer = styled.ul`
   display: flex;
-  justify-contnet: center;
-  align-items: center;
-  list-style: none;
-  margin: 0px;
+  margin: 0rem;
 `;
 
-export default Navbar;
+const Item = styled.li`
+  font-weight: 500;
+  font-size: 0.9rem;
+  list-style: none;
+  color: gray;
+  padding: 0.5rem;
+`;
+
+export default NavBar;

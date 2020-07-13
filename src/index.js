@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./containers/App";
 import { Normalize } from "styled-normalize";
 import { createGlobalStyle } from "styled-components";
+import { Provider } from "react-redux";
+import store from "./redux-modules/store";
 
 const GlobalStyle = createGlobalStyle`
     ${Normalize}
@@ -14,12 +16,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const app = (
-  <React.Fragment>
+  <Provider store={store}>
     <GlobalStyle />
     <Normalize />
     <App />
-  </React.Fragment>
+  </Provider>
 );
 
 ReactDOM.render(app, document.getElementById("root"));
-;

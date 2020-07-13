@@ -1,35 +1,47 @@
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 
-const Input = ({ type, palceholder, label, inputWidth }) => (
-  <InputContainer inputWidth={inputWidth}>
-    <InputLabel>{label}</InputLabel>
-    <InputElement type={type} palceholder={palceholder} />
-  </InputContainer>
-);
+const Input = ({ icon, inputHandler, palceHolder, name,ariaInvalid,ref }) => {
+  return (
+    <InputContainer>
+      <i className={icon} />
+      <InputField
+        placeholder={palceHolder}
+        onChange={inputHandler}
+        name={name}
+        aria-invalid={ariaInvalid}
+        ref={ref}
+      />
+    </InputContainer>
+  );
+};
 
-const InputLabel = styled.label`
-  font-size: 0.5rem;
-  font-weight: 700;
-  @media (min-width: 1024px) {
-    font-size: 1rem;
-  }
-`;
-const InputElement = styled.input`
-  width: 60%;
-  border: 2px solid #efefef;
-  border-radius: 20px;
-  box-sizing: border-box;
-  margin-left: 1rem;
-  @media (min-width: 1024px) {
-    font-size: 1rem;
-  }
-`;
 const InputContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  width: ${(props) => props.inputWidth};
+  margin-bottom: 2rem;
+  border-bottom: 1px solid gray;
+`;
+
+const InputField = styled.input`
+  font-size: 0.6rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  @media (min-width: 768px) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    // &:focus {
+    //   width: 230px;
+    // }
+  }
+  @media (min-width: 1330px) {
+    font-size: 1.2rem;
+    // &:focus {
+    //   width: 270px;
+    // }
+  }
 `;
 
 export default Input;
